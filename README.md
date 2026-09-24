@@ -29,6 +29,10 @@ In order to setup the web application as a whole:
   4. Configure the API by configuring them for the right overall username, password, and especially webpage (that was a large reason the webpage didn't work at first)
      (Specific credentials can be found at the top of each .php file:   "$conn = new mysqli("localhost", "<db_user>", "<db_password>", "<db_name>");". These must be swapped out with the correct user credentials)
   5. Deploy the frontend HTML, CSS, and JS files to the server in the /var/www/html. Also, add the configured .php files to the LAMPAPI directory.
+  6. Users can also be added through hashing, translated into basic text through MD5 in the form of:
+   insert into Users (FirstName,LastName,Login,Password) VALUES
+   ('First Name','Last Name','Username','HashedPassword') 
+   //the values on the second line are generic values
 
 How to Access:
   go to http://<purchased-domain>/index.html for the main login page. After successfully logging in, colors can be added then searched for corresponding to the userID of the login you used.
